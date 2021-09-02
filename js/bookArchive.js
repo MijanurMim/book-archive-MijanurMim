@@ -72,19 +72,19 @@ const displaySearchResult = (books) => {
       console.log(book);
       // create and appending book info
       const div = document.createElement("div");
-      div.classList.add("col", "text-center");
+      div.classList.add("col", "text-center", "text-color");
       div.innerHTML = `
       <div class="card h-100">
     
        <img src="https://covers.openlibrary.org/b/id/${
          book.cover_i
        }-M.jpg" class="card-img-top" height="300px" />
-       <h1>${book.title}<h1>
+       <h1 class="heading-color">${book.title}<h1>
        <h5>Authon Name : ${
          book.author_name ? book.author_name : "No Author Name Found"
        } </h5>
        <h5>Publisher : ${
-         book.publisher ? book.publisher : "No Publisher Found"
+         book.publisher ? book.publisher.slice(0, 40) : "No Publisher Found"
        }</h5>
        <h5>First Publish : ${
          book.first_publish_year ? book.first_publish_year : "No Publish Year"
